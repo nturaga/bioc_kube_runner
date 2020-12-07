@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: biock8s
+  name: biock8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: biock8s
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: biock8s
+    spec:
+      containers:
+      - image: bioconductor/bioc-redis-manager:devel
+        name: bioc-redis-manager
+        resources: {}
+status: {}
